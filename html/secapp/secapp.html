@@ -68,8 +68,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../taskman/taskman.html">Deploying Task Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#verifying-the-default-project">Verifying the Default Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#importing-the-blueprint">Importing the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#cloning-the-blueprint">Cloning the Blueprint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#configuring-the-blueprint">Configuring the Blueprint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#launching-the-blueprint">Launching the Blueprint</a></li>
 </ul>
@@ -268,14 +267,11 @@
 <li><p class="first">Fill out the following fields:</p>
 <ul class="simple">
 <li><strong>Add source by:</strong> - Select <strong>Subnet/IP</strong></li>
-<li>Specify <em>Your Prism Central IP</em>/32</li>
+<li>Specify <em>10.42.113.39</em>/32</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The <strong>/32</strong> denotes a single IP as opposed to a subnet range.</p>
-</div>
-<div class="figure">
-<img alt="../_images/23.png" src="../_images/23.png" />
 </div>
 </li>
 <li><p class="first">Click <strong>Add</strong>.</p>
@@ -284,7 +280,7 @@
 </li>
 <li><p class="first">Repeat Step 18 for <strong>AppTier:</strong><em>Initials</em>-<strong>TMWeb</strong> and <strong>AppTier:</strong><em>Initials</em>-<strong>TMDB</strong> to allow Calm to communicate with the web tier and database VMs.</p>
 <div class="figure">
-<img alt="../_images/24.png" src="../_images/24.png" />
+<img alt="../_images/gd7.png" src="../_images/gd7.png" />
 </div>
 <p>By default, the security policy allows the application to send all outbound traffic to any destination. The only outbound communication required for your application is for the database VM to be able to communicate with your DNS server.</p>
 </li>
@@ -293,17 +289,17 @@
 <li><p class="first">Fill out the following fields:</p>
 <ul class="simple">
 <li><strong>Add source by:</strong> - Select <strong>Subnet/IP</strong></li>
-<li>Specify <em>Your Domain Controller IP</em>/32</li>
+<li>Specify <em>10.42.113.51</em>/32</li>
 </ul>
 <div class="figure">
-<img alt="../_images/25.png" src="../_images/25.png" />
+<img alt="../_images/gd6.png" src="../_images/gd6.png" />
 </div>
 </li>
 <li><p class="first">Click <strong>Add</strong>.</p>
 </li>
 <li><p class="first">Select the <strong>+</strong> icon that appears to the right of <strong>AppTier:</strong><em>Initials</em>-<strong>TMDB</strong>, specify <strong>UDP</strong> port <strong>53</strong> and click <strong>Save</strong> to allow DNS traffic.</p>
 <div class="figure">
-<img alt="../_images/26.png" src="../_images/26.png" />
+<img alt="../_images/gd8.png" src="../_images/gd8.png" />
 </div>
 <p>Each tier of the application communicates with other tiers and the policy must allow this traffic. Some tiers such as the load balancer and web do not require communication within the same tier.</p>
 </li>

@@ -68,8 +68,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Deploying Task Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#verifying-the-default-project">Verifying the Default Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#importing-the-blueprint">Importing the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-the-blueprint">Cloning the Blueprint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-the-blueprint">Configuring the Blueprint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#launching-the-blueprint">Launching the Blueprint</a></li>
 </ul>
@@ -133,8 +132,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Deploying Task Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#verifying-the-default-project">Verifying the Default Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#importing-the-blueprint">Importing the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-the-blueprint">Cloning the Blueprint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-the-blueprint">Configuring the Blueprint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#launching-the-blueprint">Launching the Blueprint</a></li>
 </ul>
@@ -153,154 +151,98 @@
 <p><em>The estimated time to complete this lab is 10 minutes.</em></p>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p><strong>This exercise walks you through importing and launching a Calm blueprint to deploy a simple Task Manager application used in multiple labs. You do not need to complete this exercise unless directed to do so as staging for another lab.</strong></p>
+<p><strong>This exercise walks you through launching an existing Calm blueprint to deploy a simple Task Manager application used in multiple labs.</strong></p>
 </div>
-<div class="section" id="verifying-the-default-project">
-<h2>Verifying the Default Project<a class="headerlink" href="#verifying-the-default-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cloning-the-blueprint">
+<h2>Cloning the Blueprint<a class="headerlink" href="#cloning-the-blueprint" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">The blueprint for the example application used in this exercise has already been uploaded and configured. There are 2, select 1 based on your network assignment.</p>
+</li>
 <li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Services &gt; Calm</strong>.</p>
 <div class="figure">
-<img alt="../_images/0.png" src="../_images/0.png" />
+<img alt="../_images/gd5.png" src="../_images/gd5.png" />
 </div>
-</li>
-<li><p class="first">Click <img alt="projects" src="../_images/projects.png" /> <strong>Projects</strong> in the left hand toolbar and select the <strong>default</strong> project.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Mousing over an icon will display its title.</p>
-</div>
-</li>
-<li><p class="first">Under <strong>AHV Cluster</strong> verify your assigned cluster is selected from the drop-down list, otherwise select it.</p>
-<div class="figure">
-<img alt="../_images/11.png" src="../_images/11.png" />
-</div>
-</li>
-<li><p class="first">Under <strong>Network</strong>, verify that the <strong>Primary</strong> network is checked.</p>
-<div class="figure">
-<img alt="../_images/2.png" src="../_images/2.png" />
-</div>
-</li>
-<li><p class="first">If changes were made, click <strong>Save</strong>.</p>
-</li>
-</ol>
-</div>
-<div class="section" id="importing-the-blueprint">
-<h2>Importing the Blueprint<a class="headerlink" href="#importing-the-blueprint" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">Right-click on <a class="reference download internal" download="" href="../_downloads/807c36efa6e0a8c68242970e809e56a0/TaskManager.json"><code class="xref download docutils literal notranslate"><span class="pre">this</span> <span class="pre">link</span></code></a> and <strong>Save Link As…</strong> to download the blueprint for the example application used in this exercise.</p>
 </li>
 <li><p class="first">Click <img alt="blueprints" src="../_images/blueprints.png" /> <strong>Blueprints</strong> in the left hand toolbar to view available Calm blueprints.</p>
 </li>
-<li><p class="first">Click <strong>Upload Blueprint</strong> and select the <strong>TaskManager.json</strong> file previously downloaded.</p>
+<li><p class="first">Select the tick box next to <strong>Taskmanager-Primary or Taskmanager-Secondary</strong> based on your <strong>network assignment</strong>.</p>
+</li>
+<li><p class="first">Select <strong>&gt; Action &gt; Clone</strong>.</p>
+<div class="figure">
+<img alt="../_images/gd1.png" src="../_images/gd1.png" />
+</div>
 </li>
 <li><p class="first">Fill out the following fields:</p>
 <ul class="simple">
 <li><strong>Blueprint Name</strong> - <em>Initials</em>-TaskManager</li>
-<li><strong>Project</strong> - default</li>
 </ul>
 <div class="figure">
-<img alt="../_images/3.png" src="../_images/3.png" />
+<img alt="../_images/gd2.png" src="../_images/gd2.png" />
 </div>
 </li>
-<li><p class="first">Click <strong>Upload</strong>.</p>
+<li><p class="first">Click <strong>Clone</strong>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you receive an error trying to upload the blueprint, refresh your browser and try again.</p>
+<p class="last">If you receive an error, refresh your browser and try again.</p>
 </div>
 </li>
 </ol>
 </div>
 <div class="section" id="configuring-the-blueprint">
 <h2>Configuring the Blueprint<a class="headerlink" href="#configuring-the-blueprint" title="Permalink to this headline">¶</a></h2>
-<p>Before you can launch the blueprint, you must first provide specify the information not stored in exported Calm blueprints, including credentials.</p>
+<p>The blueprints are preconfigured with the necessary information required to lauch the application including credentials.</p>
 <ol class="arabic">
-<li><p class="first">In the <strong>Application Profile</strong> pane on the right, fill out the following field:</p>
+<li><p class="first">Click on your newly created bluprint <em>Initials</em>-Taskmanger</p>
+</li>
+<li><p class="first">You will see the structure of the application in graphical form.</p>
+</li>
+<li><p class="first">In the <strong>Application Profile</strong> pane on the right, you will see <strong>(Don’t Change)</strong> the following fields:</p>
 <ul class="simple">
+<li><strong>Database_name</strong> - homestead</li>
+<li><strong>INSTANCE_PUBLIC_KEY</strong> - ssh-rsa …</li>
 <li><strong>Mysql_password</strong> - nutanix/4u</li>
+<li><strong>Mysql_user</strong> - root</li>
+<li><strong>User_initials</strong> - Empty Value</li>
 </ul>
 <div class="figure">
-<img alt="../_images/4.png" src="../_images/4.png" />
+<img alt="../_images/gd3.png" src="../_images/gd3.png" />
 </div>
 </li>
-<li><p class="first">Select the <strong>WinClient</strong> service and in the pane on the right, under the <strong>VM</strong> tab, ensure the <strong>Image</strong> is set to the <strong>Windows10</strong> disk image as shown below.</p>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">FYI Please feel free to take a look around the bluprint to see how things are configured but <strong>please don’t change anything</strong>.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Select the <strong>WinClient</strong> service and in the pane on the right, under the <strong>VM</strong> tab, see the <strong>Image</strong> is set to the <strong>Windows 10</strong> disk image as shown below.</p>
 <div class="figure">
-<img alt="../_images/4b.png" src="../_images/4b.png" />
+<img alt="../_images/gd4.png" src="../_images/gd4.png" />
 </div>
 </li>
-<li><p class="first">Under <strong>Network Adapters (NICs)</strong>, ensure that <strong>NIC 1</strong> is set to <strong>Primary</strong> as shown below.</p>
+<li><p class="first">Under <strong>Network Adapters (NICs)</strong>, ensure that <strong>NIC 1</strong> is set to your <strong>Assigned network</strong> as shown below.</p>
 <div class="figure">
 <img alt="../_images/4c.png" src="../_images/4c.png" />
 </div>
 </li>
 </ol>
 <ol class="arabic">
-<li><p class="first">Select the <strong>WebServer</strong>, <strong>HAProxy</strong>, and <strong>MySQL</strong> services and ensure each has <strong>NIC 1</strong> set to <strong>Primary</strong>.</p>
+<li><p class="first">Select the <strong>WebServer</strong>, <strong>HAProxy</strong>, and <strong>MySQL</strong> services and ensure each has <strong>NIC 1</strong> set to your <strong>Assigned network</strong>.</p>
 <div class="figure">
 <img alt="../_images/4d.png" src="../_images/4d.png" />
 </div>
 </li>
-<li><p class="first">Click <strong>Save</strong>.</p>
-<div class="figure">
-<img alt="../_images/5.png" src="../_images/5.png" />
-</div>
-</li>
-<li><p class="first">Click <strong>Credentials</strong>.</p>
-<div class="figure">
-<img alt="../_images/6.png" src="../_images/6.png" />
-</div>
-</li>
-<li><p class="first">Expand the <strong>CENTOS</strong> credential by clicking its name. Copy and paste the following key into the <strong>SSH Private Key</strong> field:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
-<span class="n">MIIEowIBAAKCAQEAii7qFDhVadLx5lULAG</span><span class="o">/</span><span class="n">ooCUTA</span><span class="o">/</span><span class="n">ATSmXbArs</span><span class="o">+</span><span class="n">GdHxbUWd</span><span class="o">/</span><span class="n">bNG</span>
-<span class="n">ZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK</span>
-<span class="mi">6</span><span class="n">h822je</span><span class="o">/</span><span class="n">f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9</span>
-<span class="n">HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7Gy</span>
-<span class="n">hCRIwYzqfdgSmiAMYgJLrz</span><span class="o">/</span><span class="n">UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNR</span>
-<span class="n">uz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5OrwIBJQKCAQB</span><span class="o">++</span><span class="n">q2WCkCmbtByyrAp</span>
-<span class="mi">6</span><span class="n">ktiukjTL6MGGGhjX</span><span class="o">/</span><span class="n">PgYA5IvINX1SvtU0NZnb7FAntiSz7GFrODQyFPQ0jL3bq0</span>
-<span class="n">MrwzRDA6x</span><span class="o">+</span><span class="n">cPzMb</span><span class="o">/</span><span class="mi">7</span><span class="n">RvBEIGdadfFjbAVaMqfAsul5SpBokKFLxU6lDb2CMdhS67c</span>
-<span class="mi">1</span><span class="n">K2Hv0qKLpHL0vAdEZQ2nFAMWETvVMzl0o1dQmyGzA0GTY8VYdCRsUbwNgvFMvBj</span>
-<span class="mi">8</span><span class="n">T</span><span class="o">/</span><span class="n">svzjpASDifa7IXlGaLrXfCH584zt7y</span><span class="o">+</span><span class="n">qjJ05O1G0NFslQ9n2wi7F93N8rHxgl</span>
-<span class="n">JDE4OhfyaDyLL1UdBlBpjYPSUbX7D5NExLggWEVFEwx4JRaK6</span><span class="o">+</span><span class="n">aDdFDKbSBIidHf</span>
-<span class="n">h45NAoGBANjANRKLBtcxmW4foK5ILTuFkOaowqj</span><span class="o">+</span><span class="mi">2</span><span class="n">AIgT1ezCVpErHDFg0bkuvDk</span>
-<span class="n">QVdsAJRX5</span><span class="o">//</span><span class="n">luSO30dI0OWWGjgmIUXD7iej0sjAPJjRAv8ai</span><span class="o">+</span><span class="n">MYyaLfkdqv1Oj5c</span>
-<span class="n">oDC3KjmSdXTuWSYNvarsW</span><span class="o">+</span><span class="n">Uf2v7zlZlWesTnpV6gkZH3tX86iuiZAoGBAKM0mKX0</span>
-<span class="n">EjFkJH65Ym7gIED2CUyuFqq4WsCUD2RakpYZyIBKZGr8MRni3I4z6Hqm</span><span class="o">+</span><span class="n">rxVW6Dj</span>
-<span class="n">uFGQe5GhgPvO23UG1Y6nm0VkYgZq81TraZc</span><span class="o">/</span><span class="n">oMzignSC95w7OsLaLn6qp32Fje1M</span>
-<span class="n">Ez2Yn0T3dDcu1twY8OoDuvWx5LFMJ3NoRJaHAoGBAJ4rZP</span><span class="o">+</span><span class="n">xj17DVElxBo0EPK7k</span>
-<span class="mi">7</span><span class="n">TKygDYhwDjnJSRSN0HfFg0agmQqXucjGuzEbyAkeN1Um9vLU</span><span class="o">+</span><span class="n">xrTHqEyIN</span><span class="o">/</span><span class="n">Jqxk</span>
-<span class="n">hztKxzfTtBhK7M84p7M5iq</span><span class="o">+</span><span class="mi">0</span><span class="n">jfMau8ykdOVHZAB</span><span class="o">/</span><span class="n">odHeXLrnbrr</span><span class="o">/</span><span class="n">gVQsAKw1NdDC</span>
-<span class="n">kPCNXP</span><span class="o">/</span><span class="n">c9JrzB</span><span class="o">+</span><span class="n">c4juEVAoGBAJGPxmp</span><span class="o">/</span><span class="n">vTL4c5OebIxnCAKWP6VBUnyWliFhdYME</span>
-<span class="n">rECvNkjoZ2ZWjKhijVw8Il</span><span class="o">+</span><span class="n">OAjlFNgwJXzP9Z0qJIAMuHa2QeUfhmFKlo4ku9LOF</span>
-<span class="mi">2</span><span class="n">rdUbNJpKD5m</span><span class="o">+</span><span class="n">IRsLX1az4W6zLwPVRHp56WjzFJEfGiRjzMBfOxkMSBSjbLjDm3Z</span>
-<span class="n">iUf7AoGBALjvtjapDwlEa5</span><span class="o">/</span><span class="n">CFvzOVGFq4L</span><span class="o">/</span><span class="n">OJTBEBGx</span><span class="o">/</span><span class="n">SA4HUc3TFTtlY2hvTDPZ</span>
-<span class="n">dQr</span><span class="o">/</span><span class="n">JBzLBUjCOBVuUuH3uW7hGhW</span><span class="o">+</span><span class="n">DnlzrfbfJATaRR8Ht6VU651T</span><span class="o">+</span><span class="n">Gbrr8EqNpCP</span>
-<span class="n">gmznERCNf9Kaxl</span><span class="o">/</span><span class="n">hlyV5dZBe</span><span class="o">/</span><span class="mi">2</span><span class="n">LIK</span><span class="o">+/</span><span class="n">jLGNu9EJLoraaCBFshJKF</span>
-<span class="o">-----</span><span class="n">END</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Expand the <strong>WIN_VM_CRED</strong> credential by clicking its name. Enter <strong>nutanix/4u</strong> as the <strong>Password</strong>.</p>
-<div class="figure">
-<img alt="../_images/7.png" src="../_images/7.png" />
-</div>
-</li>
-<li><p class="first">Click <strong>Save</strong>.</p>
-</li>
-<li><p class="first">Once the blueprint has been saved, click <strong>Back</strong>.</p>
-<div class="figure">
-<img alt="../_images/8.png" src="../_images/8.png" />
-</div>
+<li><p class="first">There should be no changes to be saved.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="launching-the-blueprint">
 <h2>Launching the Blueprint<a class="headerlink" href="#launching-the-blueprint" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">After the credentials have been provided, <strong>Publish</strong>, <strong>Download</strong>, and <strong>Launch</strong> are now available from the toolbar. Click <strong>Launch</strong>.</p>
+<li><p class="first">After you have confirmed the settings, <strong>Publish</strong>, <strong>Download</strong>, and <strong>Launch</strong> are now available from the toolbar. Click <strong>Launch</strong>.</p>
 </li>
 <li><p class="first">Fill out the following fields:</p>
 <ul class="simple">
-<li><strong>Name of the Application</strong> - <em>Initials</em>-TaskManager1</li>
+<li><strong>Name of the Application</strong> - <em>Initials</em>-TaskManager</li>
 <li><strong>User_initials</strong> - <em>Initials</em></li>
 </ul>
 <div class="figure">

@@ -118,13 +118,11 @@ While you wait for the Task Manager application to be deployed from the Calm blu
 #. Fill out the following fields:
 
    - **Add source by:** - Select **Subnet/IP**
-   - Specify *Your Prism Central IP*\ /32
+   - Specify *10.42.113.39*\ /32
 
    .. note::
 
      The **/32** denotes a single IP as opposed to a subnet range.
-
-   .. figure:: images/23.png
 
 #. Click **Add**.
 
@@ -132,7 +130,7 @@ While you wait for the Task Manager application to be deployed from the Calm blu
 
 #. Repeat Step 18 for **AppTier:**\ *Initials*-**TMWeb** and **AppTier:**\ *Initials*-**TMDB** to allow Calm to communicate with the web tier and database VMs.
 
-   .. figure:: images/24.png
+   .. figure:: images/gd7.png
 
    By default, the security policy allows the application to send all outbound traffic to any destination. The only outbound communication required for your application is for the database VM to be able to communicate with your DNS server.
 
@@ -141,15 +139,15 @@ While you wait for the Task Manager application to be deployed from the Calm blu
 #. Fill out the following fields:
 
    - **Add source by:** - Select **Subnet/IP**
-   - Specify *Your Domain Controller IP*\ /32
+   - Specify *10.42.113.51*\ /32
 
-   .. figure:: images/25.png
+   .. figure:: images/gd6.png
 
 #. Click **Add**.
 
 #. Select the **+** icon that appears to the right of **AppTier:**\ *Initials*-**TMDB**, specify **UDP** port **53** and click **Save** to allow DNS traffic.
 
-   .. figure:: images/26.png
+   .. figure:: images/gd8.png
 
    Each tier of the application communicates with other tiers and the policy must allow this traffic. Some tiers such as the load balancer and web do not require communication within the same tier.
 
