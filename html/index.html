@@ -57,15 +57,12 @@
      href="#"> <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Flow</span></p>
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Menu</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview/overview.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/overview.html#intro">Intro</a></li>
 <li class="toctree-l2"><a class="reference internal" href="overview/overview.html#lab-setup">Lab Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview/overview.html#enabling-flow">Enabling Flow</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="overview/overview.html#takeaways">Takeaways</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/overview.html#enabling-flow">Enabling Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/overview.html#takeaways">Takeaways</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="taskman/taskman.html">Deploying Task Manager</a><ul>
@@ -130,7 +127,7 @@
 <div class="container">
   <div class="row">
       <div class="col-md-3">
-        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Flow</span></p>
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Menu</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview/overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="taskman/taskman.html">Deploying Task Manager</a></li>
@@ -154,8 +151,9 @@
 Microsegmentation is a component of Flow that simplifies policy management. Using multiple Prism Central categories (logical groups), you can create a powerful distributed firewall that gives administrators an application-centric policy management tool for securing VM traffic.
 Combining this with Calm allows automated deployment of applications that are secured as they are created.</p>
 <p><strong>In this lab you will use Flow to build a microsegmentation policy for a multi-tier web application, isolate groups of VMs from one another, quarantine a problematic VM, and secure VDI users with identity-based microsegmentation.</strong></p>
+</div>
 <div class="section" id="lab-setup">
-<h3>Lab Setup<a class="headerlink" href="#lab-setup" title="Permalink to this headline">¶</a></h3>
+<h2>Lab Setup<a class="headerlink" href="#lab-setup" title="Permalink to this headline">¶</a></h2>
 <p>This lab depends on the availability of a multi-tier <strong>Task Manager</strong> web application.</p>
 <p>Refer to the <a class="reference internal" href="taskman/taskman.html#taskman"><span class="std std-ref">Deploying Task Manager</span></a> lab for instructions on importing and launching the completed <strong>Task Manager</strong> blueprint.</p>
 <div class="admonition note">
@@ -163,8 +161,9 @@ Combining this with Calm allows automated deployment of applications that are se
 <p class="last">Even if you completed the <strong>Calm: Linux Workloads</strong> lab, please import the above <strong>Task Manager</strong> blueprint.</p>
 </div>
 <p>Once you have initiated the <strong>Task Manager</strong> deployment, you can proceed with the lab below. <strong>You do not need to wait for the blueprint deployment to complete to begin this lab.</strong></p>
+</div>
 <div class="section" id="enabling-flow">
-<h4>Enabling Flow<a class="headerlink" href="#enabling-flow" title="Permalink to this headline">¶</a></h4>
+<h2>Enabling Flow<a class="headerlink" href="#enabling-flow" title="Permalink to this headline">¶</a></h2>
 <p>Flow is built into Prism Central and requires no additional appliances or consoles to manage. Before you can begin securing your environment with Flow, the service must be enabled.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -181,17 +180,15 @@ Combining this with Calm allows automated deployment of applications that are se
 <li><p class="first">Click Microsegmentation. The Enable Microsegmentation dialog box is displayed. Select the Enable Microsegmentation check box. Click OK.</p>
 </li>
 </ol>
+</div>
 <div class="section" id="takeaways">
-<h5>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h5>
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h2>
 <p>What are the key things you should know about <strong>Nutanix Flow</strong>?</p>
 <ul class="simple">
 <li>Flow is built into AHV and Prism Central.</li>
 <li>It is an enabling of the feature, nothing new to install.</li>
 <li>No physical changes are required to your networking topology.</li>
 </ul>
-</div>
-</div>
-</div>
 </div>
 </div>
 

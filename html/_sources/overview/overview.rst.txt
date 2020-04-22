@@ -3,15 +3,12 @@
 
 .. _Overview:
 
+
 ---------
 Overview
 ---------
 
-*The estimated time to complete this lab is 100 minutes.*
-
-++++++++++++
-Intro
-++++++++++++
+*The estimated time to complete this lab is 90 minutes.*
 
 Flow is a software-defined networking product tightly integrated into Nutanix AHV and Prism Central. Flow provides rich visualization, automation, and security for VMs running on AHV.
 Microsegmentation is a component of Flow that simplifies policy management. Using multiple Prism Central categories (logical groups), you can create a powerful distributed firewall that gives administrators an application-centric policy management tool for securing VM traffic.
@@ -19,9 +16,9 @@ Combining this with Calm allows automated deployment of applications that are se
 
 **In this lab you will use Flow to build a microsegmentation policy for a multi-tier web application, isolate groups of VMs from one another, quarantine a problematic VM, and secure VDI users with identity-based microsegmentation.**
 
-++++++++++
++++++++++++
 Lab Setup
-++++++++++
++++++++++++
 
 This lab depends on the availability of a multi-tier **Task Manager** web application.
 
@@ -53,15 +50,14 @@ Flow is built into Prism Central and requires no additional appliances or consol
 
 #. Click Microsegmentation. The Enable Microsegmentation dialog box is displayed. Select the Enable Microsegmentation check box. Click OK.
 
-
-
+++++++++++
 Takeaways
-+++++++++
+++++++++++
 
 What are the key things you should know about **Nutanix Flow**?
 
-- In this exercise you utilized Flow to quarantine a VM using the two modalities of the quarantine policy, which are strict and forensic.
-- Quarantine policies are evaluated at a higher priority than application policies. A quarantine traffic can block traffic that would otherwise be allowed by an application policy.
-- The forensic modality is key to allow limited access a quarantined VM while the VM is quarantined.
+- Flow is built into AHV and Prism Central.
+- It is an enabling of the feature, nothing new to install.
+- No physical changes are required to your networking topology.
 
 .. |blueprints| image:: images/blueprints.png

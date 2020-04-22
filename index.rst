@@ -2,7 +2,7 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Flow
+  :caption: Menu
   :name: _flow
   :hidden:
 
@@ -12,14 +12,11 @@
   isolate/isolate
   quarantine/quarantine
 
-
-
-
 .. _flow:
 
-----
+------
 Flow
-----
+------
 
 *The estimated time to complete this lab is 90 minutes.*
 
@@ -33,8 +30,9 @@ Combining this with Calm allows automated deployment of applications that are se
 
 **In this lab you will use Flow to build a microsegmentation policy for a multi-tier web application, isolate groups of VMs from one another, quarantine a problematic VM, and secure VDI users with identity-based microsegmentation.**
 
++++++++++++
 Lab Setup
-================
++++++++++++
 
 This lab depends on the availability of a multi-tier **Task Manager** web application.
 
@@ -46,8 +44,9 @@ Refer to the :ref:`taskman` lab for instructions on importing and launching the 
 
 Once you have initiated the **Task Manager** deployment, you can proceed with the lab below. **You do not need to wait for the blueprint deployment to complete to begin this lab.**
 
+++++++++++++++
 Enabling Flow
-..............
+++++++++++++++
 
 Flow is built into Prism Central and requires no additional appliances or consoles to manage. Before you can begin securing your environment with Flow, the service must be enabled.
 
@@ -65,9 +64,9 @@ Flow is built into Prism Central and requires no additional appliances or consol
 
 #. Click Microsegmentation. The Enable Microsegmentation dialog box is displayed. Select the Enable Microsegmentation check box. Click OK.
 
-
+++++++++++
 Takeaways
-+++++++++
+++++++++++
 
 What are the key things you should know about **Nutanix Flow**?
 
