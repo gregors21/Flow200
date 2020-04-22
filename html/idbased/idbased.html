@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Nutanix Flow 200 UK HOL</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Flow</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#enabling-flow">Enabling Flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/overview.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../taskman/taskman.html">Deploying Task Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#verifying-the-default-project">Verifying the Default Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#importing-the-blueprint">Importing the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#configuring-the-blueprint">Configuring the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#launching-the-blueprint">Launching the Blueprint</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../secapp/secapp.html">Securing An Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#assigning-category-values">Assigning Category Values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../secapp/secapp.html#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../isolate/isolate.html">Isolating Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#creating-and-assigning-categories">Creating and Assigning Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#creating-an-isolation-policy">Creating an Isolation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#deleting-a-policy">Deleting a Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../isolate/isolate.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quarantine/quarantine.html">Quarantine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quarantine/quarantine.html#quarantining-a-vm">Quarantining a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quarantine/quarantine.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Flow</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../taskman/taskman.html">Deploying Task Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../secapp/secapp.html">Securing An Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../isolate/isolate.html">Isolating Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quarantine/quarantine.html">Quarantine</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="idbased">
+<span id="identity-based-microsegmentation"></span><h1>Identity Based Microsegmentation<a class="headerlink" href="#idbased" title="Permalink to this headline">¶</a></h1>
+<p><em>The estimated time to complete this lab is 100 minutes.</em></p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The VDI Policy is based on identity-based categorization of the VDI VMs using Active Directory group membership.
+Configuring VDI policy includes adding an Active Directory domain that is used for the ID firewall (ID Based Security) and configuring a service account for the domain.</p>
+</div>
+<div class="section" id="id-based-security">
+<h2>ID Based Security<a class="headerlink" href="#id-based-security" title="Permalink to this headline">¶</a></h2>
+<p>ID firewall is an extension to Flow that allows you to write security policies based on users
+and groups in an Active Directory domain in which your VDI VMs are attached. When using
+ID firewall, you can import groups from Active Directory into Prism Central as categories (in the category key ADGroup), and then write policies around these categories as you would any for other category.
+A new type of policy has been added for this purpose - the VDI Policy. ID Firewall takes care of automatically placing VDI VMs in the appropriate categories on detecting user logons into the VM hosted on Nutanix infrastructure associated with Prism Central, thus allowing user and group based enforcement of Flow policies.</p>
+</div>
+<div class="section" id="creating-a-vdi-policy">
+<h2>Creating a VDI Policy<a class="headerlink" href="#creating-a-vdi-policy" title="Permalink to this headline">¶</a></h2>
+<p>ID firewall integrates Nutanix Flow with Microsoft Active Directory (AD), such that groups in AD can be imported into Prism Central as categories.
+These imported categories can then be used in the VDI policy as target groups, inbound traffic, and outbound traffic.
+Prism Central automatically places VMs inside the imported AD group categories when user logons are detected on VMs that are part of the Active Directory domain and also present on Nutanix managed clusters, thus applying security policies based on user group membership.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Flow ID firewall does not detect user logoffs, the policy applied to a VM is kept applied until next user logon on the same VM.</p>
+<ul class="last simple">
+<li>VMs with an AppType category assigned does not get categorized by ID Based Security. This is by design.</li>
+<li>If not already available, configure an Active Directory domain that is used for ID firewall.</li>
+<li>Configure a service account with required configuration for the Active Directory domain</li>
+<li>The registered Prism Element clusters must be running AOS version 5.17 or later</li>
+<li>The registered Prism Element clusters must be running AHV version 20190916.114 or later</li>
+</ul>
+</div>
+<ol class="arabic">
+<li><p class="first">In the Security Policies dashboard (see “Security Policies Summary View” in the Prism Central Guide) and click Create Security Policy. Select Secure VDI Groups (VDI Policy) and click Create.</p>
+<p>You can create only one VDI policy for securing applications through ID Firewall. The Secure a VDI Environment page is displayed.</p>
+</li>
+<li><p class="first">On the Define Policy tab, do the following in the indicated fields, and then click Next:</p>
+</li>
+</ol>
+<ul class="simple">
+<li>The Policy Name and Purpose fields are auto-populated.</li>
+<li>Optionally, in the Advanced Configuration section, select the Allow radio button to allow IPv6 traffic. The policy rules apply to IPv4 traffic only and all IPv6 traffic is blocked by default.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you choose to block IPv6 traffic, the traffic will reamin blocked even in monitoring mode.</p>
+</div>
+<ul class="simple">
+<li>Optionally, click the toggle button against Policy Hit Logs to log traffic flow hits on the policy rules.</li>
+</ul>
+<p>You can configure syslog monitoring for the policy hit logs for Flow, see “Configuring Syslog Monitoring” in the Prism Central Guide for details.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Policy hit logs are not generated if both source and destination are in inbound or outbound category.</p>
+</div>
+<ol class="arabic simple">
+<li>In the Secure AD Groups tab, do the following in the indicated fields and click Next.</li>
+</ol>
+<ul class="simple">
+<li>For Inbound Traffic, click + Add Source and enter the category or subnets that the VDI group can receive the traffic from, as the source.</li>
+<li>For each VDI ADGroup, click +Add AD Group to select the AD groups (categorized VDI VMs) that you want to secure. You can click Import all AD Groups to add all imported ADGroup categories to the VDI policy.</li>
+<li>For Outbound Traffic, click + Add Destination and enter the category or subnets that the VDI group can send the traffic to, as the destination.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">VDI Policy does not support visualisation</p>
+</div>
+<div class="figure">
+<img alt="../_images/1.png" src="../_images/1.png" />
+</div>
+<p>#. Do one of the following:
+- Click Apply Now to apply the VDI Policy.</p>
+<ul class="simple">
+<li>Click Save and Monitor to save the configuration.</li>
+</ul>
+<p>You can switch between the monitoring and applied states on the Security Policies page and clicking the appropriate option in the Actions menu.</p>
+</div>
+<div class="section" id="configuring-active-directory-domain-services">
+<h2>Configuring Active Directory Domain Services<a class="headerlink" href="#configuring-active-directory-domain-services" title="Permalink to this headline">¶</a></h2>
+<p>Active Directory Domain Services configuration is used to import user groups for identity based security policies.</p>
+<p><strong>Before you begin</strong></p>
+<ul class="simple">
+<li>Microsegmentation must be enabled to be able to use the ID Firewall feature, see Enabling Microsegmentation.</li>
+<li>For supported AHV and AOS versions, see Prism Central Release Notes.</li>
+</ul>
+<div class="section" id="active-directory-requirements">
+<h3>Active Directory Requirements:<a class="headerlink" href="#active-directory-requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Minimum supported domain functional level in Active Directory is Windows Server 2008 R2.</li>
+<li>ID Firewall checks the membership of Security Groups only, Distribution Groups are not supported.</li>
+<li>NTP must be configured in Active Directory.</li>
+<li>DNS must be configured if you want to use host name for domain controllers.</li>
+</ul>
+<ol class="arabic simple">
+<li>Log on to the Prism Central web console.</li>
+<li>Click the collapse menu (“hamburger”) button on the left of the main menu and then select <strong>Prism Central Settings</strong> to display the Settings page.</li>
+<li>Click <strong>ID Based Security</strong> from the Settings menu (on the left).</li>
+</ol>
+<p>The <strong>ID Based Security</strong> page is displayed. This page allows you to <strong>Add New Domain</strong> or use an <strong>Existing AD</strong>.</p>
+<ol class="arabic simple" start="4">
+<li>If you select <strong>Use Existing AD</strong> in step 3, do the following in the indicated fields:</li>
+</ol>
+<ul class="simple">
+<li>Click the <strong>Manually Add Domain Controller</strong> button, then click <strong>+ Domain Controller</strong>.</li>
+<li>Enter the <strong>IP Address</strong> or <strong>Host name</strong> of the domain controllers that you want to monitor for user logons events. You must add all the domain controllers associated with your Active Directory manually.</li>
+</ul>
+<p>Click <em class="fa fa-plus-circle"></em> and add each domain controller individually, then click the blue check mark icon to save.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DNS must be configured on the cluster for the host name option to work.
+CAUTION: Do not use the Domain Admin account as the service account considering the security best practices.
+Create a new domain user and grant it required permissions as described in Configure Service Account for ID Firewall.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li>If you select <strong>Add New Domain</strong> in step 3, a set of fields is displayed. Do the following in the indicated fields:</li>
+</ol>
+<ul>
+<li><p class="first"><strong>Name</strong>: Enter a directory name.</p>
+<p>This is a name you choose to identify this entry; it need not be the name of an actual directory.</p>
+</li>
+<li><p class="first"><strong>Domain</strong>: Enter the domain name.</p>
+<p>Enter the domain name in DNS format, for example, <strong>nutanix.com</strong>.</p>
+</li>
+<li><p class="first"><strong>Directory URL</strong>: Enter the LDAP address of the directory, including the port number.</p>
+</li>
+<li><p class="first"><strong>Service Account Username</strong>: Enter the service account user name in the <a class="reference external" href="mailto:user_name&#37;&#52;&#48;domain&#46;com">user_name<span>&#64;</span>domain<span>&#46;</span>com</a> format that you want Prism Central to use to detect logons and query user and group information from Active Directory.</p>
+<p>A service account is a special user account that an application or service uses to interact with the Active Directory. Enter your Active Directory service account credentials in this (username) and the following (password) field.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ensure that you update the service account credentials here whenever the service account password changes or when a different service account is used.</p>
+</div>
+<ul class="simple">
+<li><strong>Service Account Password</strong>: Enter the service account password.</li>
+<li>When all the fields are correct, click the <strong>Save</strong> button (lower right).<ul>
+<li>ID Firewall uses the service account for ID based security with additional requirements, see Configure Service Account for ID Firewall on page 6.</li>
+</ul>
+</li>
+</ul>
+<p>Once saved, the <strong>Referenced AD Groups</strong> section is displayed. You can add a new user group by clicking <strong>+ Add User Group</strong> and edit the auto-generated <strong>Category Value</strong>. After the active directory configuration is complete, you can create the VDI Policy, see Creating a VDI Policy.</p>
+<ol class="arabic simple" start="6">
+<li>Optionally, click Add Inclusion Criteria under Manage the VM Inclusion Criteria to specify which VMs are assigned to AD Group categories upon user logon based on VM name.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>It is recommend that users add inclusion criteria if at all possible to prevent any unintended categorizations.</p>
+<p class="last">The VMs with AppType category assigned cannot be categorized by ID Based Security.</p>
+</div>
+</div>
+<div class="section" id="configure-service-account-for-id-firewall">
+<h3>Configure Service Account for ID Firewall<a class="headerlink" href="#configure-service-account-for-id-firewall" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Active Directory service account in Prism Central is used for connectivity with the Active Directory domain services. ID Firewall also uses the same service account for ID based security.</dt>
+<dd>To configure a service account for ID firewall, do the following.</dd>
+</dl>
+<ol class="arabic simple">
+<li>Create a new user in the Active Directory.</li>
+<li>Add the user to the Distributed COM Users group and the Event Log Readers domain groups.</li>
+<li>Start the dcomcnfg.exe utility and go to Component Services &gt; Computers &gt; My Computer &gt; DCOM Config.</li>
+<li>Right-click on Windows Management and Instrumentation and select Properties from the menu.</li>
+<li>Switch to Security tab, select Customize option in the Access Permissions section and then click Edit.</li>
+<li>Add the user and grant Local Access and Remote Access permissions to the user. Click OK to confirm changes.</li>
+<li>Run the WMIMGMT.msc command to start Windows Management Instrumentation snap-in.</li>
+<li>Right-click on WMI control (local) and select Properties from the menu.</li>
+<li>Switch to Security tab and expand Root tree.</li>
+<li>Select CIMV2 in the expanded tree and click Security.</li>
+<li>Go to Advanced &gt; Add &gt; Principal and enter the user name.</li>
+<li>Change scope by selecting This namespace and subnamespaces in the Applies to drop-down menu.</li>
+<li>Click the check-box to grant the Enable Account and Remote Enable permissions. Click OK to confirm changes.</li>
+<li>Restart the winmgmt service.</li>
+</ol>
+<p>C:&gt; net stop winmgmt</p>
+<p>C:&gt; net start winmgmt</p>
+<p>Alternatively, reboot the domain controller.</p>
+<ol class="arabic simple">
+<li>Repeat step 3 to step 14 on every domain controller.</li>
+</ol>
+<div class="section" id="takeaways">
+<h4>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h4>
+<p>What are the key things you should know about <strong>Nutanix Flow</strong>?</p>
+<ul class="simple">
+<li>In this exercise you utilized Flow to quarantine a VM using the two modalities of the quarantine policy, which are strict and forensic.</li>
+<li>Quarantine policies are evaluated at a higher priority than application policies. A quarantine traffic can block traffic that would otherwise be allowed by an application policy.</li>
+<li>The forensic modality is key to allow limited access a quarantined VM while the VM is quarantined.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/idbased/idbased.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

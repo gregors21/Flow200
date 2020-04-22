@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Nutanix Flow 200 UK HOL</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Isolating Environments" href="../isolate/isolate.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Flow</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#enabling-flow">Enabling Flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/overview.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../taskman/taskman.html">Deploying Task Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#verifying-the-default-project">Verifying the Default Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#importing-the-blueprint">Importing the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#configuring-the-blueprint">Configuring the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#launching-the-blueprint">Launching the Blueprint</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../secapp/secapp.html">Securing An Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#assigning-category-values">Assigning Category Values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../secapp/secapp.html#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../secapp/secapp.html#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../isolate/isolate.html">Isolating Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#creating-and-assigning-categories">Creating and Assigning Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#creating-an-isolation-policy">Creating an Isolation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#deleting-a-policy">Deleting a Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../isolate/isolate.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quarantine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quarantining-a-vm">Quarantining a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Flow</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../taskman/taskman.html">Deploying Task Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../secapp/secapp.html">Securing An Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../isolate/isolate.html">Isolating Environments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quarantine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quarantining-a-vm">Quarantining a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="quarantine">
+<span id="id1"></span><h1>Quarantine<a class="headerlink" href="#quarantine" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quarantining-a-vm">
+<h2>Quarantining a VM<a class="headerlink" href="#quarantining-a-vm" title="Permalink to this headline">¶</a></h2>
+<p>In this task we will place a VM into quarantine and observe the behavior of the VM. We will also inspect the configurable options inside the quarantine policy.</p>
+<ol class="arabic">
+<li><p class="first">Return to the <em>Initials</em><strong>-WinClient-0</strong> console.</p>
+</li>
+<li><p class="first">Open a <strong>Command Prompt</strong> and run <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">-t</span> <span class="pre">HAPROXY-VM-IP</span></code> to verify connectivity between the client and load balancer.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If the ping is unsuccessful you may need to update your Inbound Rule for <strong>Environment:Dev</strong> to <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong> to include <strong>Any</strong> as the <strong>Type</strong> and <strong>Code</strong> for <strong>ICMP</strong> traffic as shown below. Apply the updated <strong>AppTaskMan-</strong><em>Initials</em> policy and the ping should resume.</p>
+<div class="last figure">
+<img alt="../_images/411.png" src="../_images/411.png" />
+</div>
+</div>
+</li>
+<li><p class="first">In <strong>Prism Central &gt; Virtual Infrastructure &gt; VMs</strong>, select your <em>Initials</em><strong>-HAPROXY-0…</strong> VM.</p>
+</li>
+<li><p class="first">Click <strong>Actions &gt; Quarantine VMs</strong>.</p>
+<div class="figure">
+<img alt="../_images/421.png" src="../_images/421.png" />
+</div>
+</li>
+<li><p class="first">Select <strong>Forensic</strong> and click <strong>Quarantine</strong>.</p>
+<p>What happens with the continuous ping between your client and the load balancer? Can you access the Task Manager application web page from the client VM?</p>
+</li>
+<li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; Policies &gt; Security Policies &gt; Quarantine</strong> to view all Quarantined VMs.</p>
+</li>
+<li><p class="first">Click <strong>Update</strong> to edit the Quarantine policy.</p>
+<p>To illustrate the capabilities of this special Flow policy, you will add your client VM as a “forensic tool”. In production, VMs allowed inbound access to quarantined VMs could be used to run security and forensic suites such as Kali Linux or SANS SIFT.</p>
+</li>
+<li><p class="first">Under <strong>Inbound</strong>, click <strong>+ Add Source</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Add source by:</strong> - Select <strong>Subnet/IP</strong></li>
+<li>Specify <em>Your WinClient VM IP</em>/32</li>
+</ul>
+<p>To what targets can this source be connected? What is the difference between the Forensic and Strict quarantine mode?</p>
+<p>Note that adding a VM to the <strong>Strict</strong> Quarantine policy disables all inbound and outbound communication to a VM. The <strong>Strict</strong> policy would apply to an VMs whose presence on the network poses a threat to the environment.</p>
+</li>
+<li><p class="first">Click the <em class="fa fa-plus-circle"></em> icon to the left of <strong>Quarantine: Forensic</strong> to create an Inbound Rule.</p>
+</li>
+<li><p class="first">Click <strong>Save</strong> to allow any protocol on any port between the client VM and the <strong>Quarantine: Forensic</strong> category.</p>
+<div class="figure">
+<img alt="../_images/431.png" src="../_images/431.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Next &gt; Apply Now</strong> to save and apply the updated policy.</p>
+<p>What happens to the pings to the load balancer after the source is added? Can you access the Task Manager web application?</p>
+</li>
+<li><p class="first">You can remove the load balancer VM from the <strong>Quarantine: Forensic</strong> category by selecting the VM in Prism Central and clicking <strong>Actions &gt; Unquarantine VMs</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">¶</a></h2>
+<p>What are the key things you should know about <strong>Nutanix Flow</strong>?</p>
+<ul class="simple">
+<li>In this exercise you utilized Flow to quarantine a VM using the two modalities of the quarantine policy, which are strict and forensic.</li>
+<li>Quarantine policies are evaluated at a higher priority than application policies. A quarantine traffic can block traffic that would otherwise be allowed by an application policy.</li>
+<li>The forensic modality is key to allow limited access a quarantined VM while the VM is quarantined.</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/quarantine/quarantine.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

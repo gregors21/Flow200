@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Nutanix Flow 200 UK HOL</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Isolating Environments" href="../isolate/isolate.html" />
+    <link rel="prev" title="Deploying Task Manager" href="../taskman/taskman.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Flow</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/overview.html#enabling-flow">Enabling Flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/overview.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../taskman/taskman.html">Deploying Task Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#verifying-the-default-project">Verifying the Default Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#importing-the-blueprint">Importing the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#configuring-the-blueprint">Configuring the Blueprint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskman/taskman.html#launching-the-blueprint">Launching the Blueprint</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Securing An Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assigning-category-values">Assigning Category Values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../isolate/isolate.html">Isolating Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#creating-and-assigning-categories">Creating and Assigning Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#creating-an-isolation-policy">Creating an Isolation Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isolate/isolate.html#deleting-a-policy">Deleting a Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../isolate/isolate.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quarantine/quarantine.html">Quarantine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quarantine/quarantine.html#quarantining-a-vm">Quarantining a VM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quarantine/quarantine.html#takeaways">Takeaways</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Flow</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../taskman/taskman.html">Deploying Task Manager</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Securing An Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#defining-category-values">Defining Category Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-security-policy">Creating a Security Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assigning-category-values">Assigning Category Values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#monitoring-and-applying-a-security-policy">Monitoring and Applying a Security Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-application">Testing the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-flow-visualization">Using Flow Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#applying-flow-policies">Applying Flow Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../isolate/isolate.html">Isolating Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quarantine/quarantine.html">Quarantine</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="securing-an-application">
+<span id="secapp"></span><h1>Securing An Application<a class="headerlink" href="#securing-an-application" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>Flow provides multiple System categories out of the box, such as AppType, AppTier, and Environment, that are used to quickly group virtual machines. Security policies are applied using these VM groups. Start using these pre-existing categories right away, or add your own categories for custom grouping.</p>
+<div class="section" id="defining-category-values">
+<h2>Defining Category Values<a class="headerlink" href="#defining-category-values" title="Permalink to this headline">¶</a></h2>
+<p>Prism Central uses categories as metadata to tag VMs to determine how policies will be applied.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; Categories</strong>.</p>
+</li>
+<li><p class="first">Select the checkbox for <strong>AppType</strong> and click <strong>Actions &gt; Update</strong>.</p>
+<div class="figure">
+<img alt="../_images/121.png" src="../_images/121.png" />
+</div>
+</li>
+<li><p class="first">Click the <em class="fa fa-plus-circle"></em> icon beside the last value to add an additional Category value.</p>
+</li>
+<li><p class="first">Specify <em>Initials</em>-<strong>TaskMan</strong>  as the value name.</p>
+<div class="figure">
+<img alt="../_images/131.png" src="../_images/131.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Select the checkbox for <strong>AppTier</strong> and click <strong>Actions &gt; Update</strong>.</p>
+</li>
+<li><p class="first">Click the <em class="fa fa-plus-circle"></em> icon beside the last value to add an additional Category value.</p>
+</li>
+<li><p class="first">Specify <em>Initials</em>-<strong>TMWeb</strong>  as the value name. This category will be applied to the application’s web tier.</p>
+</li>
+<li><p class="first">Click <em class="fa fa-plus-circle"></em> and specify <em>Initials</em>-<strong>TMDB</strong>. This category will be applied to the application’s MySQL database.</p>
+</li>
+<li><p class="first">Click <em class="fa fa-plus-circle"></em> and specify <em>Initials</em>-<strong>TMLB</strong>. This category will be applied to the application’s HAProxy load balancer.</p>
+<div class="figure">
+<img alt="../_images/141.png" src="../_images/141.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="creating-a-security-policy">
+<h2>Creating a Security Policy<a class="headerlink" href="#creating-a-security-policy" title="Permalink to this headline">¶</a></h2>
+<p>Nutanix Flow includes a policy-driven security framework that uses a workload-centric approach instead of a network-centric approach. Therefore, it can scrutinize traffic to and from VMs no matter how their network configurations change and where they reside in the data center. The workload-centric, network-agnostic approach also enables the virtualization team to implement these security policies without having to rely on network security teams.</p>
+<p>Security policies are applied to categories (a logical grouping of VMs) and not to the VMs themselves. Therefore, it does not matter how many VMs are started up in a given category. Traffic associated with the VMs in a category is secured without administrative intervention, at any scale.</p>
+<p>While you wait for the Task Manager application to be deployed from the Calm blueprint, create the security policies that will protect the application.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Policies &gt; Security Policies</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Create Security Policy &gt; Secure Applications (App Policy) &gt; Create</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Name</strong> - <em>Initials</em>-AppTaskMan</li>
+<li><strong>Purpose</strong> - Restrict unnecessary access to Task Manager</li>
+<li><strong>Secure this app</strong> - AppType: <em>Initials</em>-TaskMan</li>
+<li>Do <strong>NOT</strong> select <strong>Filter the app type by category</strong>.</li>
+</ul>
+<div class="figure">
+<img alt="../_images/181.png" src="../_images/181.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Next</strong>.</p>
+</li>
+<li><p class="first">If prompted, click <strong>OK, Got it!</strong> on the tutorial diagram of the <strong>Create App Security Policy</strong> wizard.</p>
+</li>
+<li><p class="first">To allow for more granular configuration of the security policy, click <strong>Set rules on App Tiers</strong> rather than applying the same rules to all components of the application.</p>
+<div class="figure">
+<img alt="../_images/191.png" src="../_images/191.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>+ Add Tier</strong>.</p>
+</li>
+<li><p class="first">Select <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong> from the drop down.</p>
+</li>
+<li><p class="first">Repeat Steps 7-8 for <strong>AppTier:</strong><em>Initials</em>-<strong>TMWeb</strong> and <strong>AppTier:</strong><em>Initials</em>-<strong>TMDB</strong>.</p>
+<div class="figure">
+<img alt="../_images/201.png" src="../_images/201.png" />
+</div>
+<p>Next you will define the <strong>Inbound</strong> rules, which control which sources you will allow to communicate with your application. You can allow all inbound traffic, or define whitelisted sources. By default, the security policy is set to deny all incoming traffic.</p>
+<p>In this scenario we want to allow inbound TCP traffic on port 80 from all clients on the production network.</p>
+</li>
+<li><p class="first">Under <strong>Inbound</strong>, click <strong>+ Add Source</strong>.</p>
+</li>
+<li><p class="first">Start typing <strong>Environment:Production</strong> and click <strong>Add</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Sources can also be specified by IP or subnet, but Categories allow for greater flexibility as this data can follow a VM regardless of changes to its network location.</p>
+</div>
+</li>
+<li><p class="first">To create an inbound rule, select the <strong>+</strong> icon that appears to the left of <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong>.</p>
+<div class="figure">
+<img alt="../_images/211.png" src="../_images/211.png" />
+</div>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Protocol</strong> - TCP</li>
+<li><strong>Ports</strong> - 80</li>
+</ul>
+<div class="figure">
+<img alt="../_images/221.png" src="../_images/221.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Multiple protocols and ports can be added to a single rule.</p>
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+<p>Calm could also require access to the VMs for workflows including scaling out, scaling in, or upgrades. Calm communicates with these VMs via SSH, using TCP port 22.</p>
+</li>
+<li><p class="first">Under <strong>Inbound</strong>, click <strong>+ Add Source</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Add source by:</strong> - Select <strong>Subnet/IP</strong></li>
+<li>Specify <em>Your Prism Central IP</em>/32</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>/32</strong> denotes a single IP as opposed to a subnet range.</p>
+</div>
+<div class="figure">
+<img alt="../_images/231.png" src="../_images/231.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Add</strong>.</p>
+</li>
+<li><p class="first">Select the <strong>+</strong> icon that appears to the left of <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong>, specify <strong>TCP</strong> port <strong>22</strong> and click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Repeat Step 18 for <strong>AppTier:</strong><em>Initials</em>-<strong>TMWeb</strong> and <strong>AppTier:</strong><em>Initials</em>-<strong>TMDB</strong> to allow Calm to communicate with the web tier and database VMs.</p>
+<div class="figure">
+<img alt="../_images/241.png" src="../_images/241.png" />
+</div>
+<p>By default, the security policy allows the application to send all outbound traffic to any destination. The only outbound communication required for your application is for the database VM to be able to communicate with your DNS server.</p>
+</li>
+<li><p class="first">Under <strong>Outbound</strong>, select <strong>Whitelist Only</strong> from the drop down menu, and click <strong>+ Add Destination</strong>.</p>
+</li>
+<li><p class="first">Fill out the following fields:</p>
+<ul class="simple">
+<li><strong>Add source by:</strong> - Select <strong>Subnet/IP</strong></li>
+<li>Specify <em>Your Domain Controller IP</em>/32</li>
+</ul>
+<div class="figure">
+<img alt="../_images/251.png" src="../_images/251.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Add</strong>.</p>
+</li>
+<li><p class="first">Select the <strong>+</strong> icon that appears to the right of <strong>AppTier:</strong><em>Initials</em>-<strong>TMDB</strong>, specify <strong>UDP</strong> port <strong>53</strong> and click <strong>Save</strong> to allow DNS traffic.</p>
+<div class="figure">
+<img alt="../_images/261.png" src="../_images/261.png" />
+</div>
+<p>Each tier of the application communicates with other tiers and the policy must allow this traffic. Some tiers such as the load balancer and web do not require communication within the same tier.</p>
+</li>
+<li><p class="first">To define intra-app communication, click <strong>Set Rules within App</strong>.</p>
+<div class="figure">
+<img alt="../_images/271.png" src="../_images/271.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong> and select <strong>No</strong> to prevent communication between VMs in this tier. There is only a single load balancer VM within the tier.</p>
+</li>
+<li><p class="first">While <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong> is still selected, click the <em class="fa fa-plus-circle"></em> icon to the right of <strong>AppTier:</strong><em>Initials</em>-<strong>TMWeb</strong> to create a tier to tier rule.</p>
+</li>
+<li><p class="first">Fill out the following fields to allow communication on TCP port 80 between the load balancer and web tiers:</p>
+<ul class="simple">
+<li><strong>Protocol</strong> - TCP</li>
+<li><strong>Ports</strong> - 80</li>
+</ul>
+<div class="figure">
+<img alt="../_images/281.png" src="../_images/281.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Click <strong>AppTier:</strong><em>Initials</em>-<strong>TMWeb</strong> and select <strong>No</strong> to prevent communication between VMs in this tier. While there are multiple web server VMs, they do not need to communicate with each other.</p>
+</li>
+<li><p class="first">While <strong>AppTier:</strong><em>Initials</em>-<strong>TMWeb</strong> is still selected, click the <em class="fa fa-plus-circle"></em> icon to the right of <strong>AppTier:</strong><em>Initials</em>-<strong>TMDB</strong> to create another tier to tier rule.</p>
+</li>
+<li><p class="first">Fill out the following fields to allow communication on TCP port 3306 to allow the database connection between the web servers and the MySQL database:</p>
+<ul class="simple">
+<li><strong>Protocol</strong> - TCP</li>
+<li><strong>Ports</strong> - 3306</li>
+</ul>
+<div class="figure">
+<img alt="../_images/291.png" src="../_images/291.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Save</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Next</strong> to review the security policy.</p>
+</li>
+<li><p class="first">Click <strong>Save and Monitor</strong> to save the policy.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="assigning-category-values">
+<h2>Assigning Category Values<a class="headerlink" href="#assigning-category-values" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By this time, your application blueprint should have finished provisioning. If it has not completed, please wait until it has finished to proceed.</p>
+</div>
+<p>You will now apply the previously created categories to the VMs provisioned from your Task Manager blueprint. Flow categories can be assigned as part of a Calm blueprint, but the purpose of this exercise is to understand category assignment to existing virtual machines in an environment.</p>
+<ol class="arabic">
+<li><p class="first">In <strong>Prism Central</strong>, select <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Filters</strong> and search for <em>Initials-</em> to display your virtual machines.</p>
+<div class="figure">
+<img alt="../_images/151.png" src="../_images/151.png" />
+</div>
+</li>
+<li><p class="first">Using the checkboxes, select the 4 VMs associated with the application (HAProxy, MYSQL, WebServer-0, WebServer-1) and select <strong>Actions &gt; Manage Categories</strong>.</p>
+<div class="figure">
+<img alt="../_images/161.png" src="../_images/161.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can also use the <strong>Label</strong> functionality to make searching for this group of VMs faster in the future.</p>
+<div class="last figure">
+<img alt="../_images/16b1.png" src="../_images/16b1.png" />
+</div>
+</div>
+</li>
+<li><p class="first">Specify <strong>AppType:</strong><em>Initials</em>-<strong>TaskMan</strong> in the search bar and click <strong>Save</strong> icon to bulk assign the category to all 4 VMs.</p>
+</li>
+<li><p class="first">Select ONLY the <em>Initials</em><strong>-HAProxy</strong> VM, select <strong>Actions &gt; Manage Categories</strong>, specify the <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong> category and click <strong>Save</strong>.</p>
+<div class="figure">
+<img alt="../_images/171.png" src="../_images/171.png" />
+</div>
+</li>
+<li><p class="first">Repeat Step 5 to assign <strong>AppTier:</strong><em>Initials</em>-<strong>TMWeb</strong> to your web tier VMs.</p>
+</li>
+<li><p class="first">Repeat Step 5 to assign <strong>AppTier:</strong><em>Initials</em>-<strong>TMDB</strong> to your MySQL VM.</p>
+</li>
+<li><p class="first">Finally, repeat Step 5 to assign <strong>Environment:Dev</strong> to your Windows client VM.</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/flow-hol-env-dev1.png" src="../_images/flow-hol-env-dev1.png" />
+</div>
+</div></blockquote>
+<div class="section" id="monitoring-and-applying-a-security-policy">
+<h3>Monitoring and Applying a Security Policy<a class="headerlink" href="#monitoring-and-applying-a-security-policy" title="Permalink to this headline">¶</a></h3>
+<p>Before applying the Flow policy, you will ensure the Task Manager application is working as expected.</p>
+</div>
+</div>
+<div class="section" id="testing-the-application">
+<h2>Testing the Application<a class="headerlink" href="#testing-the-application" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">From <strong>Prism Central &gt; Virtual Infrastructure &gt; VMs</strong>, note the IP address of your <em>Initials</em><strong>-HAPROXY-0…</strong> and <em>Initials</em><strong>-MYSQL-0…</strong> VMs.</p>
+</li>
+<li><p class="first">Launch the console for your <em>Initials</em><strong>-WinClient-0</strong> VM.</p>
+<p>This VM was provisioned as part of the Task Manager application blueprint.</p>
+</li>
+<li><p class="first">From the <em>Initials</em><strong>-WinClient-0</strong> console open a browser and access http://<em>HAPROXY-VM-IP</em>/.</p>
+</li>
+<li><p class="first">Verify that the application loads and that tasks can be added and deleted.</p>
+<div class="figure">
+<img alt="../_images/301.png" src="../_images/301.png" />
+</div>
+</li>
+<li><p class="first">Open <strong>Command Prompt</strong> and run <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">-t</span> <span class="pre">MYSQL-VM-IP</span></code> to verify connectivity between the client and database. Leave the ping running.</p>
+</li>
+<li><p class="first">Open a second <strong>Command Prompt</strong> and run <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">-t</span> <span class="pre">HAPROXY-VM-IP</span></code> to verify connectivity between the client and load balancer. Leave the ping running.</p>
+<div class="figure">
+<img alt="../_images/311.png" src="../_images/311.png" />
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="using-flow-visualization">
+<h2>Using Flow Visualization<a class="headerlink" href="#using-flow-visualization" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Return to <strong>Prism Central</strong> and select <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; Policies &gt; Security Policies &gt;</strong><em>Initials</em>-<strong>AppTaskMan</strong>.</p>
+</li>
+<li><p class="first">Verify that <strong>Environment: Dev</strong> appears as an inbound source. The source and line appear in yellow to indicate that traffic has been detected from your client VM.</p>
+<div class="figure">
+<img alt="../_images/321.png" src="../_images/321.png" />
+</div>
+</li>
+<li><p class="first">Mouse over the line connecting <strong>Environment: Dev</strong> to <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong> to view the protocol and connection information.</p>
+</li>
+<li><p class="first">Click the yellow flow line to view a graph of connection attempts over the past 24 hours.</p>
+<div class="figure">
+<img alt="../_images/331.png" src="../_images/331.png" />
+</div>
+<p>Are there any other detected outbound traffic flows? Hover over these connections and determine what ports are in use.</p>
+</li>
+<li><p class="first">Click <strong>Update</strong> to edit the policy.</p>
+<div class="figure">
+<img alt="../_images/341.png" src="../_images/341.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>Next</strong> and wait for the detected traffic flows to populate.</p>
+</li>
+<li><p class="first">Mouse over the <strong>Environment: Dev</strong> source that connects to <strong>AppTier:</strong><em>Initials</em>-<strong>TMLB</strong> and click the <em class="fa fa-check"></em> icon that appears.</p>
+<div class="figure">
+<img alt="../_images/351.png" src="../_images/351.png" />
+</div>
+</li>
+<li><p class="first">Click <strong>OK</strong> to complete adding the rule.</p>
+<p>The <strong>Environment: Dev</strong> source should now turn blue, indicating that it is part of the policy. Mouse over the flow line and verify that both ICMP (ping traffic) and TCP port 80 appear.</p>
+</li>
+<li><p class="first">Click <strong>Next &gt; Save and Monitor</strong> to update the policy.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="applying-flow-policies">
+<h2>Applying Flow Policies<a class="headerlink" href="#applying-flow-policies" title="Permalink to this headline">¶</a></h2>
+<p>In order to enforce the policy you have defined, the policy must be applied.</p>
+<ol class="arabic">
+<li><p class="first">Select <em>Initials</em>-<strong>AppTaskMan</strong>  and click <strong>Actions &gt; Apply</strong>.</p>
+<div class="figure">
+<img alt="../_images/361.png" src="../_images/361.png" />
+</div>
+</li>
+<li><p class="first">Type <strong>APPLY</strong> in the confirmation dialogue and click <strong>OK</strong> to begin blocking traffic.</p>
+</li>
+<li><p class="first">Return to the <em>Initials</em><strong>-WinClient-0</strong> console.</p>
+<p>What happens to the continuous ping traffic from the Windows client to the database server? Is this traffic blocked?</p>
+</li>
+<li><p class="first">Verify that the Windows Client VM can still access the Task Manager application using the web browser and the load balancer IP address.</p>
+<p>Can you still enter new tasks that require communication between the web server and database?</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/secapp/secapp.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
