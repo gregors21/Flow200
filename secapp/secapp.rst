@@ -118,7 +118,7 @@ While you wait for the Task Manager application to be deployed from the Calm blu
 #. Fill out the following fields:
 
    - **Add source by:** - Select **Subnet/IP**
-   - Specify *10.42.113.39*\ /32
+   - Specify *10.55.1.39*\ /32
 
    .. note::
 
@@ -139,9 +139,9 @@ While you wait for the Task Manager application to be deployed from the Calm blu
 #. Fill out the following fields:
 
    - **Add source by:** - Select **Subnet/IP**
-   - Specify *10.42.113.51*\ /32
+   - Specify *10.55.1.41*\ /32
 
-   .. figure:: images/gd6.png
+   .. figure:: images/gd9.png
 
 #. Click **Add**.
 
